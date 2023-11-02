@@ -39,35 +39,35 @@ Make sure to replace ^1.0.0 with the desired version.
    }
 4. Run the checkAppVersion function to retrieve the app's information.
 
-Example
-Heres an example of how you can use the Android App Checker Flutter Plugin in your Flutter app:
-```dart
-import 'package:flutter/material.dart';
-import 'package:android_app_checker/android_app_checker.dart';
+   Example
+   Heres an example of how you can use the Android App Checker Flutter Plugin in your Flutter app:
+   ```dart
+   import 'package:flutter/material.dart';
+   import 'package:android_app_checker/android_app_checker.dart';
+   
+   void main() {
+     runApp(MyApp());
+   }
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('App Version Checker Example'),
-        ),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () async {
-              await checkAppVersion();
-            },
-            child: Text('Check App Version'),
-          ),
-        ),
-      ),
-    );
-  }
+   class MyApp extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+       return MaterialApp(
+         home: Scaffold(
+           appBar: AppBar(
+             title: Text('App Version Checker Example'),
+           ),
+           body: Center(
+             child: ElevatedButton(
+               onPressed: () async {
+                 await checkAppVersion();
+               },
+               child: Text('Check App Version'),
+             ),
+           ),
+         ),
+       );
+     }
 
   Future<void> checkAppVersion() async {
     const packageName = "com.example.target_app"; // Replace with the target app's package name
