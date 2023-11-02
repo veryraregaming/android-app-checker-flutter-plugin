@@ -18,14 +18,18 @@ class AndroidAppCheckerPlugin(private val registrar: Registrar) : MethodChannel.
   override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
     if (call.method == "getAppVersion") {
       val packageName = call.argument<String>("package_name")
-      val versionInfo = getAppVersion(packageName)
-      result.success(versionInfo)
+      if (packageName != null) {
+        val versionInfo = getAppVersion(packageName)
+        result.success(versionInfo)
+      } else {
+        result.error("INVALID_ARGUMENT", "Package name cannot be null", null)
+      }
     } else {
       result.notImplemented()
     }
   }
 
-  private fun getAppVersion(packageName: String?): Map<String, String> {
+  private fun getAppVersion(packageName: String): Map<String, String> {
     val versionInfo = mutableMapOf<String, String>()
     try {
       val packageInfo = registrar.context().packageManager.getPackageInfo(packageName, 0)
