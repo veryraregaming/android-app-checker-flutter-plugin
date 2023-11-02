@@ -35,8 +35,8 @@ Make sure to replace ^1.0.0 with the desired version.
     print("App Name: $appName");
     print("Version Name: $versionName");
     print("Version Code: $versionCode");
-  }
-}```
+   }
+   }
 4. Run the checkAppVersion function to retrieve the app's information.
 
 Example
