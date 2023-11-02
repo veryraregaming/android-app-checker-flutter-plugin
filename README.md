@@ -1,5 +1,5 @@
 markdown
-
+Copy code
 # Android App Checker Flutter Plugin
 
 The **Android App Checker Flutter Plugin** is a Flutter plugin that allows you to retrieve information about an Android app installed on a device. You can use this plugin to fetch details such as the app's name, version name, and version code.
@@ -55,4 +55,46 @@ void main() {
   runApp(MyApp());
 }
 
-// ...
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('App Version Checker Example'),
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () async {
+              await checkAppVersion();
+            },
+            child: Text('Check App Version'),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> checkAppVersion() async {
+    const packageName = "com.example.target_app"; // Replace with the target app's package name
+
+    final versionInfo = await AndroidAppChecker.getAppVersion(packageName);
+
+    if (versionInfo.containsKey("error")) {
+      print("Error: ${versionInfo['error']}");
+    } else {
+      final appName = versionInfo['app_name'];
+      final versionName = versionInfo['version_name'];
+      final versionCode = versionInfo['version_code'];
+
+      print("App Name: $appName");
+      print("Version Name: $versionName");
+      print("Version Code: $versionCode");
+    }
+  }
+}
+
+void main() {
+  runApp(MyApp());
+}
+Feel free to replace "com.example.target_app" with the package name of the app you want to check.
