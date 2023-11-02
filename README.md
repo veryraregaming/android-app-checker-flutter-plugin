@@ -7,13 +7,13 @@ The **Android App Checker Flutter Plugin** is a Flutter plugin that allows you t
 To use this plugin in your Flutter project, you need to follow these steps:
 
 1. Add the `android_app_checker` plugin to your project's `pubspec.yaml` file:
-  
+
   ```yaml
   dependencies:
     android_app_checker: ^1.0.0
-  Make sure to replace ^1.0.0 with the desired version.
+    Make sure to replace ^1.0.0 with the desired version.
   ```
-  
+
 
 Import the plugin in your Dart file:
 
@@ -99,10 +99,23 @@ class MyApp extends StatelessWidget {
 
 ```
 
+## Using the Plugin with Android V2 Embedding
+
+If you want to use this plugin with Flutter projects that use Android V2 embedding, follow these steps:
+
+1. Update the `android/app/src/main/AndroidManifest.xml` file in your Flutter project to use Android V2 embedding. You can do this by adding the following line
+
+  ```kt
+  <meta-data
+  android:name="flutterEmbedding"
+  android:value="2" />
+  ```
+
+
 Feel free to replace `"com.example.target_app"` with the package name of the app you want to check.
 
 ## Issues and Contributions
 
-If you encounter any issues with this plugin or would like to contribute to its development, please open an issue or submit a pull request on the [GitHub repository]([https://github.com/your-username/your-repository](https://github.com/veryraregaming/android-app-checker-flutter-plugin)https://github.com/veryraregaming/android-app-checker-flutter-plugin).
+If you encounter any issues with this plugin or would like to contribute to its development, please open an issue or submit a pull request on the [GitHub repository](https://github.com/your-username/your-repository).
 
 Happy Fluttering!
