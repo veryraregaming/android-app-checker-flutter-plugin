@@ -16,18 +16,18 @@ Make sure to replace ^1.0.0 with the desired version.
 2. Import the plugin in your Dart file:
 
    ```dart
-   import 'package:android_app_checker/android_app_checker.dart';
+   import 'package:android_app_checker/android_app_checker.dart';```
 
 3. Call the getAppVersion method with the package name of the target app:
    ```dart
    Future<void> checkAppVersion() async {
-   final packageName = "com.example.target_app"; // Replace with the target app's package name
+  final packageName = "com.example.target_app"; // Replace with the target app's package name
 
-   final versionInfo = await AndroidAppChecker.getAppVersion(packageName);
+  final versionInfo = await AndroidAppChecker.getAppVersion(packageName);
 
-   if (versionInfo.containsKey("error")) {
+  if (versionInfo.containsKey("error")) {
     print("Error: ${versionInfo['error']}");
-   } else {
+  } else {
     final appName = versionInfo['app_name'];
     final versionName = versionInfo['version_name'];
     final versionCode = versionInfo['version_code'];
@@ -35,12 +35,13 @@ Make sure to replace ^1.0.0 with the desired version.
     print("App Name: $appName");
     print("Version Name: $versionName");
     print("Version Code: $versionCode");
-   }
-   }
+  }
+}
+```
 4. Run the checkAppVersion function to retrieve the app's information.
 
 Example
-Here's an example of how you can use the Android App Checker Flutter Plugin in your Flutter app:
+Heres an example of how you can use the Android App Checker Flutter Plugin in your Flutter app:
 
    ```dart
 import 'package:flutter/material.dart';
