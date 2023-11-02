@@ -19,7 +19,7 @@ Import the plugin in your Dart file:
 
 dart
 Copy code
-import 'package:android_app_checker/android_app_checker.dart';
+```import 'package:android_app_checker/android_app_checker.dart';```
 Call the getAppVersion method with the package name of the target app:
 
 dart
