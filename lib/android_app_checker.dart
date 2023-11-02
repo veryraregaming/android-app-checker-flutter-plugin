@@ -7,6 +7,8 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  get packageName => null;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,20 +29,27 @@ class MyApp extends StatelessWidget {
   }
 
   Future<void> checkAppVersion() async {
-    const packageName = "com.example.target_app"; // Replace with the target app's package name
+    // Check if the package name is null.
+    if (packageName == null) {
+      return;
+    }
 
-    final versionInfo = await AndroidAppChecker.getAppVersion(packageName);
+    try {
+      final versionInfo = await AndroidAppChecker.getAppVersion(packageName);
 
-    if (versionInfo.containsKey("error")) {
-      print("Error: ${versionInfo['error']}");
-    } else {
-      final appName = versionInfo['app_name'];
-      final versionName = versionInfo['version_name'];
-      final versionCode = versionInfo['version_code'];
+      if (versionInfo.containsKey("error")) {
+        print("Error: ${versionInfo['error']}");
+      } else {
+        final appName = versionInfo['app_name'];
+        final versionName = versionInfo['version_name'];
+        final versionCode = versionInfo['version_code'];
 
-      print("App Name: $appName");
-      print("Version Name: $versionName");
-      print("Version Code: $versionCode");
+        print("App Name: $appName");
+        print("Version Name: $versionName");
+        print("Version Code: $versionCode");
+      }
+    } catch (e) {
+      // Handle the error.
     }
   }
 }
