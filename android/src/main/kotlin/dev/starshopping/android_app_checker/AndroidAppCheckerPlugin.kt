@@ -6,6 +6,7 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.PluginRegistry.Registrar
 
 class AndroidAppCheckerPlugin(private val registrar: Registrar) : MethodChannel.MethodCallHandler {
+
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
