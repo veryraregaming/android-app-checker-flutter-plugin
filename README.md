@@ -177,6 +177,6 @@ class MyApp extends StatelessWidget {
       print("Version Code: $versionCode");
     }
   }
-}```
+}
 
 Feel free to replace "com.example.target_app" with the package name of the app you want to check.
