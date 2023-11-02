@@ -103,6 +103,6 @@ Feel free to replace `"com.example.target_app"` with the package name of the app
 
 ## Issues and Contributions
 
-If you encounter any issues with this plugin or would like to contribute to its development, please open an issue or submit a pull request on the [GitHub repository](https://github.com/your-username/your-repository).
+If you encounter any issues with this plugin or would like to contribute to its development, please open an issue or submit a pull request on the [GitHub repository]([https://github.com/your-username/your-repository](https://github.com/veryraregaming/android-app-checker-flutter-plugin)https://github.com/veryraregaming/android-app-checker-flutter-plugin).
 
 Happy Fluttering!
