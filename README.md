@@ -1,34 +1,25 @@
-
-I'll provide you with a complete README.md template that you can use as a starting point for your project. Please note that you may need to adapt and customize it to match your project's specifics.
-
-markdown
-Copy code
-# Android App Checker Flutter Plugin
+ Android App Checker Flutter Plugin
 
 The **Android App Checker Flutter Plugin** is a Flutter plugin that allows you to retrieve information about an Android app installed on a device. You can use this plugin to fetch details such as the app's name, version name, and version code.
 
-## Usage
+## Installation
 
-To use this plugin, you'll need to include it in your Flutter project and then call the `getAppVersion` method with the package name of the target app. Here's how you can use it in your Flutter app:
+To use this plugin in your Flutter project, you need to follow these steps:
 
-1. Add the plugin to your `pubspec.yaml` file:
+1. Add the `android_app_checker` plugin to your project's `pubspec.yaml` file:
 
    ```yaml
    dependencies:
-     android_app_checker: ^1.0.0
-Make sure to replace ^1.0.0 with the desired version.
-
+     android_app_checker: ^1.0.0```
 Make sure to replace ^1.0.0 with the desired version.
 
 Import the plugin in your Dart file:
 
-dart
-Copy code
-import 'package:android_app_checker/android_app_checker.dart';
+```dart
+import 'package:android_app_checker/android_app_checker.dart';```
 Call the getAppVersion method with the package name of the target app:
 
-dart
-Copy code
+```dart
 Future<void> checkAppVersion() async {
   final packageName = "com.example.target_app"; // Replace with the target app's package name
 
@@ -45,14 +36,13 @@ Future<void> checkAppVersion() async {
     print("Version Name: $versionName");
     print("Version Code: $versionCode");
   }
-}
+}```
 Run the checkAppVersion function to retrieve the app's information.
 
 Example
 Here's an example of how you can use the Android App Checker Flutter Plugin in your Flutter app:
 
-dart
-Copy code
+```dart
 import 'package:flutter/material.dart';
 import 'package:android_app_checker/android_app_checker.dart';
 
@@ -97,5 +87,5 @@ class MyApp extends StatelessWidget {
       print("Version Code: $versionCode");
     }
   }
-}
+}```
 Feel free to replace "com.example.target_app" with the package name of the app you want to check.
