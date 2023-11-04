@@ -12,7 +12,7 @@ YAML
 
 ```
 dependencies:
-  android_app_checker: ^1.0.0](https://bard.google.com/faq#coding)
+  android_app_checker: ^1.0.0]
 ```
 
 2. Import the plugin into your Dart file:
